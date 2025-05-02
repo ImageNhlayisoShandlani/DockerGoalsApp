@@ -2,11 +2,13 @@ FROM node
 
 WORKDIR /app
 
-COPY . /app
-
 RUN npm config set strict-ssl false
 
+COPY package.json /app
+
 RUN npm install
+
+COPY . /app
 
 EXPOSE 80
 
